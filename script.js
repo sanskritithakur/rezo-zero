@@ -4,9 +4,9 @@ range.value = 0;
 var body = document.body,
     html = document.documentElement;
 
-var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                       html.clientHeight, html.scrollHeight, html.offsetHeight );
-
+// var height = Math.max( body.scrollHeight, body.offsetHeight, 
+//                        html.clientHeight, html.scrollHeight, html.offsetHeight );
+var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 range.addEventListener('input', function(){
     
     window.scrollTo(0,(height/100)*range.value);
